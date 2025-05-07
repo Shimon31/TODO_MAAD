@@ -11,12 +11,16 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var drawerLayout: DrawerLayout
     lateinit var appBarConfiguration: AppBarConfiguration
     lateinit var navController: NavController
+    private lateinit var navigationView : NavigationView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         setNavigationDrawer()
         navController = findNavController(R.id.nav_host_fragment)
         appBarConfigurationSetIp()
+        setupActionBarWithNavController(navController,drawerLayout)
 
     }
 
